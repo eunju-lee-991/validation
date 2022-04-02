@@ -19,7 +19,7 @@
     <div class="py-5 text-center">
         <h2 th:text="#{page.addItem}">상품 등록</h2>
     </div>
-    <form action="/validation/v1/items/add" th:action th:object="${item}" method="post">
+    <form action="/validation/v2/items/add" th:action th:object="${item}" method="post">
         <div th:if="${errors?.containsKey('globalError')}">
             <p class="field-error" th:text="${errors['globalError']}">전체 오류
                 메시지</p>
@@ -66,7 +66,7 @@ field-error' : 'form-control'"
             <div class="col">
                 <button class="w-100 btn btn-secondary btn-lg"
                         onclick="location.href='items.html'"
-                        th:onclick="|location.href='@{/validation/v1/items}'|"
+                        th:onclick="|location.href='@{/validation/v2/items}'|"
                         type="button" th:text="#{button.cancel}">취소</button>
             </div>
         </div>

@@ -85,7 +85,6 @@ public class ValidationItemControllerV2 {
             int resultPrice = item.getPrice() * item.getQuantity();
             if (resultPrice < 10000) {
                 bindingResult.addError(new ObjectError("item", "가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice));
-
             }
         }
 
@@ -176,7 +175,7 @@ public class ValidationItemControllerV2 {
         */
 
         if(item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1000000){
-            bindingResult.addError(new FieldError("item", "price", item.getPrice(),false, new String[]{"range.item.price"}, new Object[]{1000,1000000},"가격은"));
+            bindingResult.addError(new FieldError("item", "price", "rkrur",false, new String[]{"range.item.price"}, new Object[]{1000,1000000},"가격은"));
         }
         if (item.getQuantity() == null || item.getQuantity() > 9999) {
             bindingResult.addError(new FieldError("item", "quantity", item.getQuantity(),false, new String[]{"max.item.quantity"}, new Object[] {9999},"수량은"));
